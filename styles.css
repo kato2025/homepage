@@ -60,10 +60,9 @@ img.descriptionIcon:hover,
   color: #FFF;
   background-color: transparent;
 }
-.description {
-  padding: 30px;
-  max-width: 600px;
-  max-height: 500px;
+.headerDescription {
+  max-width: 500px;
+  height: auto;
   font-size: 25px;
 }
 .mySummary {
@@ -192,8 +191,14 @@ footer {
     align-items: center;
     flex-wrap: wrap;
   }
+.footerDescription {
+  padding: 20px;
+  max-width: 500px;
+  height: auto;
+  font-size: 25px;
+}
 .footerPic {
-  max-width: 540px;
+  max-width: 510px;
   height: auto;
 }
 .footerCard {
@@ -225,6 +230,8 @@ a {
 }
 @media (max-width: 800px) {
   * {
+    margin: 0;
+    padding: 0;
     font-size: 15px;
   }
   main {
