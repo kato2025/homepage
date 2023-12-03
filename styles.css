@@ -11,13 +11,6 @@ body {
     background-image: url("./images/background.png");
     background-repeat: no-repeat;
   }
-.aboutMe {
-  margin-top: -5px;
-  margin-bottom: 15px;
-  text-align: left;
-  font-size: 50px;
-  font-family: var(--serif-font--)
-  }
 header {
     display: flex;
     flex-direction: column;
@@ -26,6 +19,13 @@ header {
     flex-wrap: wrap;
     padding-top: 40px;
   }
+.aboutMe {
+  margin-top: -5px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 50px;
+  font-family: var(--serif-font--)
+  }
 .headerContent {
     display: flex;
     justify-content: center;
@@ -33,13 +33,32 @@ header {
     flex-wrap: wrap;
   }
 .prifilePic {
+  position: relative;
   max-width: 480px;
+  overflow: hidden;
+  border-radius: 100%;
+  box-shadow: 10px 10px 10px rgba(237, 241, 121, 0.5);
+}
+/* New styles for image hover effect */
+img.prifilePic,
+.myHCJProjects {
+  transition: transform 1s ease;
+}
+img.descriptionIcon {
+  transition: transform 0.3s ease;
+}
+img.prifilePic:hover,
+img.descriptionIcon:hover,
+.myHCJProjects:hover {
+  transform: scale(1.1);
 }
 .headerCard {
   display: flex;
   flex-direction: column;
+  margin-left: 20px;
   font-size: 15px;
-  background-color: bisque;
+  color: #FFF;
+  background-color: transparent;
 }
 .description {
   padding: 30px;
@@ -47,16 +66,20 @@ header {
   max-height: 500px;
   font-size: 25px;
 }
+.mySummary {
+  margin-bottom: -10px;
+  font-size: 21px;
+}
+.descriptionSocial {
+  margin-right: 30px;
+}
 .descriptionSocial,
 .projectSocial {
   display: flex;
   justify-content: flex-end;
-  gap: 20px;
+  gap:20px;
   margin-top: 30px;
   padding-right: 30px;
-}
-.descriptionIcon {
-  max-width: 30px;
 }
 .content {
   display: flex;
@@ -86,13 +109,17 @@ header {
   padding: 16px;
   max-width: 400px;
   font-size: 24px;
-  background: blanchedalmond;
+  background: #e5effa;
+  border-radius: 10px;
+  box-shadow: 10px 0px 10px rgba(11, 145, 178, 0.5);
 }
 .myHCJProjects {
   padding: 0px;
 }
 .hciThumbnail {
   max-width: 400px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 10px 0px 10px rgba(11, 145, 178, 0.5);
 }
 .projectSocial {
   display: flex;
@@ -101,9 +128,10 @@ header {
 .projectBar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: -80px;
   margin-bottom: -116px;
-  padding: 30px;
+  padding: 30px 0px 30px 30px;
 }
 .projectName {
   font-size: 34px;
@@ -113,7 +141,19 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  margin-top: 14px;
+  margin-left: 20px;
+}
+.descriptionIcon,
+.footerIcon {
+  max-width: 30px;
+}
+#open-in-new {
+  width: 580px;
+}
+.descriptionOpenIcon {
+  max-width: 80px;
 }
 .hcjProjectDescriptioin {
   margin-bottom: -10px;
@@ -133,8 +173,8 @@ header {
   justify-content: flex-start;align-items: center;
 }
 .certificateThumbnail {
-  max-width: 80px;
-  height: 60px;
+  max-width: 90px;
+  height: 85px;
 }
 .certificateDescriptioin {
   margin-left: 20px;
@@ -143,14 +183,50 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 96px;
     color: white;
-    background: darkslateblue;
+    background: #0C90B2;
   }
+.footerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+.footerPic {
+  max-width: 540px;
+  height: auto;
+}
+.footerCard {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+.contactMe {
+  display: flex;
+  flex-direction: column;
+}
+.myPhoneNumber::first-letter,
+.myEmail::first-letter {
+  margin-right: 20px;
+  font-size: 40px;
+}
+.myPhoneNumber {
+  margin-bottom: -25px;
+}
+.footerSocial {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 10px;
+  padding-right: 30px;
+}
 a {
   text-decoration: none;
 }
 @media (max-width: 800px) {
+  * {
+    font-size: 15px;
+  }
   main {
       flex-direction: column;
     }
@@ -161,13 +237,25 @@ a {
   .headerContent {
     gap: 10px;
   }
+  .headerCard {
+    margin-top: 25px;
+    color: #000;
+  }
+  .description {
+    text-align: left;
+  }
+  .content {
+    margin-top: -45px;
+  }
   .myCertifications {
-    justify-content: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin-top: 5px;
   }
   .certificateDescriptioin {
     margin-top: 5px;
+  }
+  .footerPic {
+    margin-bottom: 20px;
   }
   }
